@@ -4,7 +4,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context="com.bwellthy.wellthyhiringtest.MainActivity"
+  tools:context="com.bwellthy.wellthyhiringtest.home.MainActivity"
   tools:showIn="@layout/activity_main">
 
   <android.support.v7.widget.Toolbar

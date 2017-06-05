@@ -1,4 +1,4 @@
-package com.bwellthy.wellthyhiringtest;
+package com.bwellthy.wellthyhiringtest.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,13 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import com.bwellthy.wellthyhiringtest.MainContract.Presenter;
+import com.bwellthy.wellthyhiringtest.home.MainContract.Presenter;
+import com.bwellthy.wellthyhiringtest.R;
+import com.bwellthy.wellthyhiringtest.repository.Repository;
+import com.bwellthy.wellthyhiringtest.repository.RepositoryImpl;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
   private EditText name;
   private EditText description;
   private FloatingActionButton fab;
+  private Repository repository;
   private Presenter presenter;
 
   @Override
@@ -27,7 +31,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
     name = (EditText) findViewById(R.id.name);
     description = (EditText) findViewById(R.id.description);
-    presenter = new MainPresenter(this, getPreferences(MODE_PRIVATE));
+    repository = new RepositoryImpl(getPreferences(MODE_PRIVATE));
+    presenter = new MainPresenter(this, repository);
 
     fab.setOnClickListener(new View.OnClickListener() {
       @Override

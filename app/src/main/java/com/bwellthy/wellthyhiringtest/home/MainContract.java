@@ -1,4 +1,4 @@
-package com.bwellthy.wellthyhiringtest;
+package com.bwellthy.wellthyhiringtest.home;
 
 /**
  * This file is subject to the terms and conditions defined in
